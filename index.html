@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>NEXUS — CS2 Community Servers | Retake, DM, Surf</title>
+<meta name="description" content="NEXUS CS2 Community — Retake, Deathmatch and Surf servers. Low ping, 128 tick, active admins, VIP and giveaways." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="bg-grid"></div>
+<div class="bg-glow"></div>
+
+<header class="nav" id="top">
+  <div class="container nav-inner">
+    <a href="#top" class="logo">
+      <span class="logo-mark">N</span>
+      <span class="logo-text">NEXUS<small>CS2 COMMUNITY</small></span>
+      <span class="live-dot"><i></i>LIVE</span>
+    </a>
+    <nav class="links" id="navLinks">
+      <a href="#servers">Servers</a>
+      <a href="#vip">VIP</a>
+      <a href="#rules">Rules</a>
+      <a href="#bans">Bans</a>
+      <a href="#stats">Stats</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn btn-ghost" href="#" onclick="return false">Forum</a>
+      <a class="btn btn-primary" href="#discord">Discord</a>
+      <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero container">
+  <div class="hero-left">
+    <div class="pill"><span class="pulse"></span> 128 TICK • EU • NO LAG • ANTI-CHEAT</div>
+    <h1>DOMINATE<br><span class="accent">CS2</span> LIKE<br>A PRO.</h1>
+    <p class="sub">Retake, Deathmatch & Surf servers built for grinders. Fast retakes, clean DM spawns, smooth surfs. Join <strong id="heroOnline">312</strong> players online right now.</p>
+    <div class="hero-btns">
+      <a href="#servers" class="btn btn-primary btn-lg">▶ Browse Servers</a>
+      <a href="#vip" class="btn btn-outline btn-lg">Get VIP — from €3.99</a>
+    </div>
+    <div class="hero-stats">
+      <div><b data-count="1284">0</b><span>Unique players / day</span></div>
+      <div><b data-count="6">0</b><span>Active servers</span></div>
+      <div><b data-count="8400">0</b><span>Discord members</span></div>
+      <div><b><span data-count="99">0</span>%</b><span>Uptime</span></div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="quick-connect">
+      <div class="qc-head">
+        <h3>QUICK CONNECT</h3>
+        <span class="qc-online"><i></i><span id="totalOnline">0</span>/144 online</span>
+      </div>
+      <div id="quickList"></div>
+      <div class="qc-foot">
+        <p>Press <kbd>F</kbd> in console: <code>connect play.nexus-cs2.eu</code></p>
+        <button class="btn btn-primary btn-block" id="connectFastest">Connect to fastest server</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVERS -->
+<section id="servers" class="section container">
+  <div class="sec-head">
+    <div>
+      <p class="kicker">// GAME SERVERS</p>
+      <h2>Choose your <span class="accent">battleground</span></h2>
+    </div>
+    <div class="filters">
+      <button class="chip active" data-filter="all">All</button>
+      <button class="chip" data-filter="retake">Retake</button>
+      <button class="chip" data-filter="dm">Deathmatch</button>
+      <button class="chip" data-filter="surf">Surf</button>
+    </div>
+  </div>
+  <div class="grid-servers" id="serverGrid"></div>
+</section>
+
+<!-- PERKS -->
+<section class="section container">
+  <div class="perks">
+    <div class="perk"><div class="perk-icon">⚡</div><h4>128 Tick + Sub-tick</h4><p>Ryzen 7950X, NVMe, 1Gbps. Avg ping 12ms EU.</p></div>
+    <div class="perk"><div class="perk-icon">🛡️</div><h4>Active Anti-Cheat</h4><p>Custom anti-cheat + admin coverage 14h/day + demo reviews.</p></div>
+    <div class="perk"><div class="perk-icon">🏆</div><h4>Ranks & Stats</h4><p>ELO, K/D, HS%, Clutch stats. Track progress every match.</p></div>
+    <div class="perk"><div class="perk-icon">🎁</div><h4>Daily Giveaways</h4><p>Skins, VIP and knives every week in Discord.</p></div>
+  </div>
+</section>
+
+<!-- VIP -->
+<section id="vip" class="section container">
+  <p class="kicker">// VIP SHOP</p>
+  <h2>Support us. <span class="accent">Get perks.</span></h2>
+  <p class="muted">Instant activation via Steam. All payments secure via Stripe / PayPal / Crypto.</p>
+  <div class="grid-vip">
+    <div class="vip-card">
+      <h3>VIP</h3>
+      <div class="price">€3.99<span>/30 days</span></div>
+      <ul>
+        <li>✓ VIP tag in chat & scoreboard</li>
+        <li>✓ Reserved slot</li>
+        <li>✓ !ws !knife !gloves !agents</li>
+        <li>✓ Map vote priority</li>
+        <li>✕ Retake round picker</li>
+      </ul>
+      <button class="btn btn-outline btn-block buy-btn" data-plan="VIP">Buy VIP</button>
+    </div>
+    <div class="vip-card featured">
+      <div class="badge">MOST POPULAR</div>
+      <h3>VIP+</h3>
+      <div class="price">€7.99<span>/30 days</span></div>
+      <ul>
+        <li>✓ Everything in VIP</li>
+        <li>✓ Retake queue picker + !kevc</li>
+        <li>✓ DM spawn effects + tracers</li>
+        <li>✓ Surf: !vip start + trails</li>
+        <li>✓ Discord VIP role + giveaways x2</li>
+      </ul>
+      <button class="btn btn-primary btn-block buy-btn" data-plan="VIP+">Buy VIP+</button>
+    </div>
+    <div class="vip-card">
+      <h3>LIFETIME</h3>
+      <div class="price">€29.99<span>/forever</span></div>
+      <ul>
+        <li>✓ Everything in VIP+</li>
+        <li>✓ Lifetime, no renewal</li>
+        <li>✓ Custom chat color</li>
+        <li>✓ Priority support</li>
+        <li>✓ Name in Hall of Fame</li>
+      </ul>
+      <button class="btn btn-outline btn-block buy-btn" data-plan="LIFETIME">Buy Lifetime</button>
+    </div>
+  </div>
+  <p class="muted small center">Demo shop — connect to real payment by replacing <code>script.js: BUY_LINK</code>. Steam login required.</p>
+</section>
+
+<!-- RULES -->
+<section id="rules" class="section container">
+  <div class="rules-box">
+    <div>
+      <p class="kicker">// SERVER RULES</p>
+      <h2>Play hard.<br>Play <span class="accent">fair.</span></h2>
+      <p class="muted">Ignorance is no excuse. 3 warnings = temp ban. Cheating = permanent, no appeal.</p>
+      <div class="rule-tabs">
+        <button class="chip active" data-rules="general">General</button>
+        <button class="chip" data-rules="retake">Retake / DM</button>
+        <button class="chip" data-rules="surf">Surf</button>
+      </div>
+    </div>
+    <div class="rules-list" id="rulesList"></div>
+  </div>
+</section>
+
+<!-- BANS + STATS -->
+<section class="section container two-col">
+  <div id="bans" class="panel">
+    <div class="panel-head">
+      <h3>LATEST BANS</h3>
+      <input id="banSearch" type="search" placeholder="Search nick / steamid / reason..." />
+    </div>
+    <table class="table" id="banTable">
+      <thead><tr><th>Player</th><th>Reason</th><th>Length</th><th>Admin</th></tr></thead>
+      <tbody></tbody>
+    </table>
+    <a class="link" href="#" onclick="return false">Open full banlist →</a>
+  </div>
+
+  <div id="stats" class="panel">
+    <div class="panel-head">
+      <h3>TOP PLAYERS — THIS WEEK</h3>
+      <span class="qc-online"><i></i>Season 7</span>
+    </div>
+    <table class="table" id="statsTable">
+      <thead><tr><th>#</th><th>Player</th><th>ELO</th><th>K/D</th><th>HS%</th></tr></thead>
+      <tbody></tbody>
+    </table>
+    <div class="mini-stats">
+      <div><b>1.2M</b><span>kills tracked</span></div>
+      <div><b>48k</b><span>retakes played</span></div>
+      <div><b>312</b><span>surf records</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="section container narrow">
+  <p class="kicker center">// FAQ</p>
+  <h2 class="center">Questions? <span class="accent">Answers.</span></h2>
+  <div class="faq" id="faqList">
+    <details open><summary>How do I connect to a server?</summary><p>Click CONNECT on any server card, or open CS2 console and type <code>connect play.nexus-cs2.eu:27015</code> (change port per server). Add to favorites for faster join.</p></details>
+    <details><summary>Is VIP instant?</summary><p>Yes. After payment link your SteamID and run <code>!vip</code> in chat. Activation takes max 5 minutes.</p></details>
+    <details><summary>I was banned unfairly. What now?</summary><p>Open a ticket in Discord #appeals with your SteamID64 + demo link. We review within 24h.</p></details>
+    <details><summary>Do stats reset?</summary><p>Weekly leaderboard resets every Monday 00:00 CET. All-time ELO stays.</p></details>
+  </div>
+</section>
+
+<!-- DISCORD -->
+<section id="discord" class="section container">
+  <div class="discord-cta">
+    <div>
+      <h2>JOIN 8,400+ PLAYERS<br>ON <span class="accent">DISCORD.</span></h2>
+      <p>LFG, appeals, giveaways, patch notes and 1v1 tournaments every Friday.</p>
+      <div class="hero-btns">
+        <a href="#" onclick="return false" class="btn btn-primary btn-lg">Join Discord</a>
+        <button class="btn btn-outline btn-lg" id="copyDiscord">Copy discord.gg/nexuscs2</button>
+      </div>
+    </div>
+    <div class="discord-card">
+      <div class="dc-head"><i></i><b>NEXUS CS2</b><span>● 1,204 online</span></div>
+      <div class="dc-ch"># announcements — Season 7 started, +knife giveaway</div>
+      <div class="dc-ch"># lfg-retake — LFT retake grind 2k+ elo</div>
+      <div class="dc-ch"># clips — donjj with 1v4 clutch on mirage 🤯</div>
+      <div class="dc-ch"># appeals — ticket #4821 resolved</div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container foot">
+    <div><b>NEXUS</b> © 2026 — Not affiliated with Valve. CS2 is a trademark of Valve Corporation.<br><span class="muted">play.nexus-cs2.eu • support@nexus-cs2.eu</span></div>
+    <div class="foot-links"><a href="#servers">Servers</a><a href="#vip">VIP</a><a href="#rules">Rules</a><a href="#" onclick="return false">Privacy</a><a href="#" onclick="return false">Terms</a></div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
